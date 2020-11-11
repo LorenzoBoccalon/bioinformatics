@@ -100,10 +100,6 @@ def kmp_search(text, pattern) -> [int]:
     return p
 
 
-def output(shift) -> None:
-    print("The pattern occurs with shift " + str(shift))
-
-
 text, pattern = "bbbabbbba", "bbba"
 print("Table of pattern", pattern, ":", kmp_table(pattern))
 print("The pattern occurs at positions :", kmp_search(text, pattern))
