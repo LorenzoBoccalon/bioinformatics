@@ -1,10 +1,10 @@
 def kmp_table(pattern) -> [int]:
     m = len(pattern)
     table = [-1] * m
-    pos = 1  # the current position we are computing in T
-    cnd = 0  # the zero-based index in W of the next character of the current candidate substring
+    pos = 1  # the current position we are computing in the pattern ( pos equivalent to i )
+    cnd = 0  # the zero-based index in the pattern of the next character of the current candidate substring ( cnd equivalent to j )
 
-    while pos < len(pattern):
+    while pos < m:
         if pattern[pos] == pattern[cnd]:
             table[pos] = table[cnd]
         else:
@@ -80,8 +80,10 @@ def axamac(pattern, text) -> [int]:
 t, p = "GCATCGCAGAGAGTATACAGTACG", "GCAGAGAG"
 # pre processing
 print("Table of pattern", p, ":", kmp_table(p))
+# output should be: [-1, 0, 0, -1, 1, -1, 1, -1, 1]
 # KMP
 print("The pattern occurs at positions :", kmp_search(t, p))
 # Apostolico-Chrochemore
 print("The pattern occurs at positions :", kmp_search(t, p))
+# output should be: [0, 5]
 
