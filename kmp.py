@@ -84,6 +84,6 @@ print("Table of pattern", p, ":", kmp_table(p))
 # KMP
 print("The pattern occurs at positions :", kmp_search(t, p))
 # Apostolico-Chrochemore
-print("The pattern occurs at positions :", kmp_search(t, p))
+print("The pattern occurs at positions :", axamac(t, p))
 # output should be: [0, 5]
 
