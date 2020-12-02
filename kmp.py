@@ -59,10 +59,10 @@ def axamac(text, pattern) -> [int]:
     while j <= n - m:
         while i < m and pattern[i] == text[i + j]:
             i += 1
-        if i >= m:
-            while k < ell and pattern[k] == text[i + j]:
+        if i == m:
+            while k < ell and pattern[k] == text[k + j]:
                 k += 1
-            if k >= ell:
+            if k == ell:
                 pos.append(j)
         j += i - table[i]
         if i == ell:
@@ -74,16 +74,15 @@ def axamac(text, pattern) -> [int]:
             else:
                 k = ell
                 i = table[i]
+    return pos
 
 
-# t, p = "bbbabbbba", "bbba"
 t, p = "GCATCGCAGAGAGTATACAGTACG", "GCAGAGAG"
 # pre processing
 print("Table of pattern", p, ":", kmp_table(p))
-# output should be: [-1, 0, 0, -1, 1, -1, 1, -1, 1]
+# output is: [-1, 0, 0, -1, 1, -1, 1, -1, 1]
 # KMP
 print("The pattern occurs at positions :", kmp_search(t, p))
 # Apostolico-Chrochemore
 print("The pattern occurs at positions :", axamac(t, p))
-# output should be: [0, 5]
-
+# both outputs are: [5]
