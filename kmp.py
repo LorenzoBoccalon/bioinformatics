@@ -41,7 +41,7 @@ def kmp_search(text, pattern) -> [int]:
     return pos
 
 
-def axamac(pattern, text) -> [int]:
+def axamac(text, pattern) -> [int]:
     pos = []
 
     # preprocessing
